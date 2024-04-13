@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reglog/editprof.css' %}">
+
+<h>изменить профиль</h>
+<p><br></p>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="edit_ava">
+        {{ profform.ava }}<br>
+    </div>
+
+<label class="edit_text">псевдоним</label><br> 
+    <div class="edit_inp">
+        {{ profform.nickname }}
+    </div>
+<label class="edit_text">имя</label><br> 
+    <div class="edit_inp">
+        {{ profform.first_name }}  
+    </div>
+<label class="edit_text">фамилия</label><br> 
+    <div class="edit_inp">
+        {{ profform.last_name }}
+    </div>
+<label class="edit_text">дата рождения(гг\мм\дд)</label><br> 
+    <div class="edit_inp">
+        {{ profform.birsday }}
+    </div>
+<label class="edit_text">почта</label><br> 
+    <div class="edit_inp">
+        {{ profform.email }}
+    </div>
+<label class="edit_text">о себе </label><br> 
+    <div class="edit_inp">
+        {{ profform.about }}
+    </div>
+
+    <button class="button" type="submit">сохранить</button>   
+
+</form> 
+<p><br></p>
+
+{% endblock content %}

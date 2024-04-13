@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<html>
+<title>Bu_site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    
+<body>
+
+
+    <div id="mainbar">
+        <div></div>
+
+        <div>              
+            <a class="menu1" href="{% url 'home' %}">BU_site</a>
+        </div>
+        
+        <div>{% block menu %}{% endblock menu %}</div>
+        
+        <div >             
+            {% if user.is_authenticated %}
+                <p><a class="menu2"  href="{% url 'myprofile' %}">{{user.username}}</a></p>
+            {% else %}
+                <p><a class="menu2" href="{% url 'login' %}">Log in</a></p>
+            {% endif %}
+        </div>
+
+        <div></div>
+
+        <div class="menu">
+            <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+            <label for="burger-checkbox" class="burger"></label>
+            <ul class="menu-list">
+                <li><a href="#" class="menu-item">Главная</a><li>
+                <li><a href="#" class="menu-item">О нас</a><li>
+                <li><a href="#" class="menu-item">Команда</a><li>
+                <li><a href="#" class="menu-item">Контакты</a><li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    
+            <div id="c_top">
+            </div>
+                <div id="c_left">
+                </div>
+                    <div id="c_bot">
+                    </div>
+                        <div id="c_right">
+                        </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <div id="rightbar">
+        {% block rightbar %}
+        {% endblock rightbar%}
+    </div>
+
+    <div id="l_left">
+    </div>
+
+    <div id="leftbar">
+        <div>             
+            <a class="leftlink" href="{% url 'about' %}">about</a><br>
+            <a class="leftlink" href="{% url 'shownews'%}">news</a><br>
+            <a class="leftlink" href="{% url 'show' %}">show</a><br>
+            <a class="leftlink" href="{% url 'create' %}">create</a><br>
+            <a class="leftlink" href="{% url 'showtutor' %}">tutor</a><br>
+        </div>
+        {% block leftbar %}
+        {% endblock leftbar %}
+    </div>
+
+    <div id="footer">
+        <div></div>
+        <div>
+            <p>BukaY © 2024 да нет прав никаких</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<style> 
+    
+   
+</style>

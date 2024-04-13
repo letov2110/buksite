@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/newart/shownews.css' %}">
+<head>
+    <title>News List</title>
+</head>
+
+<body>
+<div class="newsim">
+    <form method="GET" action="">
+        <button class="button" type="submit" href="/show" >сброс</button>
+        {% for category in newsc %}
+            <button class="button" type="submit" name="category" value="{{ category.id }}">
+                {{ category.name }}
+            </button>
+        {% endfor %} 
+    </form>
+</div>
+
+<div class="newss">
+    {% for el in news %}
+    
+        <div class='alert'>
+            <img src="{{ el.image.url }}" alt="image">
+        <div>
+
+        <div class="newstitle">
+            {{ el.title }}
+        </div>
+        <div class="newssubtitle">
+            {{ el.subtitle }}
+        </div>
+        <div class="newslink">
+            <a href="{% url 'd_news' el.id %}" class="btn">читать полностью</a>
+        </div>
+    
+    {% endfor %}
+</div>
+</body>
+<p><br><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+{% endblock content %}
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reglog/log.css' %}">
+
+<body>
+    <h>вход</h>
+    <p><br></p>
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label class="log_text" >введите логин</label><br>
+                <div class=" reg_inp">  
+                    {{login.username}}<br>
+                </div>
+                    <label class="log_text" >введите логин</label><br>
+                        <div class=" reg_inp">  
+                            {{login.password}}<br>
+                        </div>
+                        
+            <button class="button" type="submit">вход</button>
+    </form>
+    <br><h>нет аккаунта?</h><br>
+    <button class="button" type="submit" href="{% url 'register' %}">регистрация</button>
+{% endblock  %}
+</html>

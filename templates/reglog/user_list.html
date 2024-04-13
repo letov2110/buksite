@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reglog/userlist.css' %}">
+
+<h>пользователи</h>
+<p><br></p>
+<div style='margin-left:40px;height: 150px;'>
+    {% for user in users %}
+        {% if user.myuser.ava %}
+            <div class="profile"> 
+                <div class="prof_link">
+                <a href="{% url 'profile' user.myuser.id %}"> </div>
+                    <img src="{{ user.myuser.ava.url }}" alt="avatar"> 
+                    {{ user.myuser.first_name }} 
+                    {{ user.myuser.nickname }} 
+                    {{ user.myuser.last_name }}
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %} 
+</div>
+<p><br></p>
+{% endblock %}

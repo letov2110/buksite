@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/apl/create.css' %}">
+
+<html>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label class="add_com" for="id_title">команда:</label><br>
+                <div class=" inp">
+                    {{ add_form.title }}<br>
+                </div>
+            <label class="add_dis" for="id_content">описание:</label><br>
+                <div class=" inp_2">
+                    {{ add_form.content }}<br>
+                </div>
+                <div class=" inp_3">
+                    {{ add_form.categories }}
+                </div>    
+        </div>
+        <button class="button" type="submit" name="add" value="добавить">добавить</button>
+    </form>
+    
+</html>
+{% endblock content %}

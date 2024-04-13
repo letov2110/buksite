@@ -1,0 +1,49 @@
+.prof_name {
+    margin-top:3vh;
+    margin-left: 2vw;
+    font-size: 18px;
+    font-family:Courier New;
+}
+.prof_ava {
+    float: left; 
+    margin-right: 3vw; 
+    margin-top:5vh;
+}
+.inform {
+    font-size: 15px;
+    margin-left: 15vw;
+    color: #444;
+}
+.prof_information {
+    overflow: auto; 
+    margin-top:1vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 18px;
+    font-family:Courier New;
+}
+@media screen and (max-width: 768px) {
+    .b {
+    display: flex; 
+    flex-direction: column; 
+    
+    }
+    .prof_ava {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .privat {
+    position: fixed;
+    top: 20vh;
+    left: 20px;
+    }
+}
+img {
+    min-height: 30vh;
+    max-height: 30vh;
+    min-width: 10vw;
+    max-width: 10vw;
+    }

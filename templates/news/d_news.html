@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/newart/d_news.css' %}">
+
+
+<h1 style="font-size: 30px; color: #444; text-align: center;">
+     {{ newss.title }}
+</h1>
+<div class='alert' style="padding: 10px;">
+     <p style="font-size: 15px; color: #222; text-align: center;">
+          {{ newss.date }} | {{ newss.category}} | Просмотры: {{ newss.views }}
+     </p>
+</div>
+     <img src="{{ newss.image.url }}" style="width: 50vw; max-width: 500px; display: block; margin: 0 auto;" alt="image">
+     <br>  </br>
+<div style="overflow: auto; max-height: 400px; text-align: center;">
+     <h1 style="font-size: 18px; color: #333; width: 80%; margin: 0 auto;">
+          {{ newss.text }}
+     </h1>
+     
+</div>
+<p>  <br><br>  </p>
+<p>  <br><br>  </p>
+
+{% endblock content %}

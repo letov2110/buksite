@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tutor/d_tutor.css' %}">
+
+    <body> 
+    <div class="posttitle">
+        {{ post.title }}
+    </div>
+    <div class="posttext">
+        {{ post.text|safe }}
+    </div>
+
+<form  method="post">
+    {% csrf_token %}
+
+    <label class="q"></label><br> 
+        <div class="tut_inp">
+            {{ form.text }}
+        </div>
+            <button class="button" type="submit">прокоментировать</button>
+</form>
+
+    {% for comment in comments %}
+
+    <div class="com_img">
+        <img src="{{ comment.author.myuser.ava.url }}" alt="ava">
+    </div>
+
+        <div class="comm_au">
+            {{ comment.author.username }}
+        </div>
+        <div class="commdate">дата:
+            {{ comment.pub_date }}
+        </div>
+        <div class="comm">
+            {{ comment.text }}
+        </div>
+    {% endfor %}
+
+
+    <p></br></p>
+{% endblock content %}

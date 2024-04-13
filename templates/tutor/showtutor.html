@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tutor/showtut.css' %}">
+
+<body>
+
+<h>туторы</h> 
+{% for tut in all_tut %}
+
+<div class="blocktut">
+    <div class="lin_image">
+        <img src="{{ tut.author.myuser.ava.url }}" alt="{{ tut.author.user.ava }}">
+    </div>
+
+    <div class="titletut">
+        {{ tut.title }}
+    </div>
+    <div class="auth">
+        {{ tut.author }}
+    </div>
+    <div class="authinf">
+        {{ tut.date }}{{ tut.views }}
+    </div>
+    <div class="readmore">
+        <p4><a href="{% url 'd_tutor' tut.id %}" class="btn">открыть тутор</a></p4>
+    </div>
+</div>
+
+{% endfor %}
+
+</body>
+{% endblock content %} 

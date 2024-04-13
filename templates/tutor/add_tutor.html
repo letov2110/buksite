@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/tutor/addtut.css' %}">
+
+<h>добавить тутор</h>
+<p><br></p>
+
+<form method="post">
+    {% csrf_token %}
+
+<label class="tut_name">изображение</label><br> 
+    <div class="tut_inp">
+        {{ form.image }}
+    </div>
+<label class="tut_name">заголовок</label><br> 
+    <div class="tut_inp">
+        {{ form.title }}
+    </div>
+<label class="tut_name">текст</label><br> 
+    <div class="tut_inp_t">
+        {{ form.text }}
+    </div>
+    
+<button class="button" type="submit">опублковать</button>
+
+</form>
+
+{% endblock%}

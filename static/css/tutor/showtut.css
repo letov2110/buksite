@@ -1,0 +1,39 @@
+h {
+    margin-left: 25vw;
+    font-size: 25px;
+    color: #444;
+    top:2vh;
+}
+.lin_image img {
+    border-radius: 5%; 
+    max-width: 60px;
+    max-height: 60px;  
+    margin: 20px;
+    margin-top: 10vh;
+}
+.titletut {
+    margin-left: 4vw;
+    font-size: 25px;
+    color: #444;
+    margin-top: -12vh;
+}
+.authinf {
+    margin-left: 20vw;
+    font-size: 15px;
+    color: #444;
+    margin-top: -5vh;
+}
+.readmore{
+    margin-left: 20vw;
+    color: #444;
+    text-decoration:none ;
+}
+.auth{
+    margin-left: 1vw;
+    margin-top: 6vh;
+    font-size: 18px;
+    color: #444;
+}
+a:-webkit-any-link {
+    color: #444;
+}

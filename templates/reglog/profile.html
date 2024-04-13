@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reglog/profile.css' %}">
+
+<body>
+
+    <div class="prof_name">
+        {{ user.myuser.first_name }} {{ user.myuser.nickname }} {{ user.myuser.last_name }}<br>
+    </div>
+    
+    {% if user.myuser.ava %}
+        <div class="prof_ava"> 
+            <img src="{{ user.myuser.ava.url }}" alt="avatar">
+        </div> 
+    {% endif %}
+    
+    <div class="b">
+    
+        <label class="inform" for="age">возраст: </label><br>
+            <div class="prof_information">
+                {{ user.myuser.calculate_age }}<br>
+            </div> 
+        <label class="inform" for="email">почта:</label><br> 
+            <div class="prof_information">
+                {{ user.myuser.email }}<br>
+            </div>
+        <label class="inform" для="about">о себе:</label><br> 
+            <div class="prof_information">
+                {{ user.myuser.about }}<br>
+            </div>
+    </div>
+
+{% endblock content %}
+

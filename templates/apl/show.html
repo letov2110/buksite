@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/apl/show.css' %}">
+<body>
+    <form method="GET" action="">
+        <button class="button" type="submit" href="/show" >сброс</button>
+            {% for category in teg1 %}
+                <button class="button" type="submit" name="category" value="{{ category.id }}">
+                    {{ category.name }}
+                </button>
+            {% endfor %} 
+    </form>
+
+    <tbody >
+        <p><br></p>
+        {% for inf in teg %}
+        <button  class="button" onclick="copy('{{ inf.title }}')">{{ inf.title }}</button><br>
+            <dd>{{ inf.content }}</dd>
+        {% endfor %}
+
+        <p><br></p>
+        {% comment %} 
+        костыль а по дргому не влазит на страницу))
+        {% endcomment %}
+    </tbody>
+
+
+<script>
+    function copy(text) {
+        var input = document.createElement('input');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        {% comment %} alert('Copied to clipboard: ' + text); {% endcomment %}
+    }
+</script>
+</body>
+{% endblock%}

@@ -1,0 +1,192 @@
+#mainbar div:nth-child(1) { width: 10vw; }
+#mainbar div:nth-child(2) { width: 10vw; flex-shrink: 1;}
+#mainbar div:nth-child(3) { width: 50vw;flex-shrink: 1; }
+#mainbar div:nth-child(4) { width: 18vw; }
+#mainbar div:nth-child(5) { width: 2vw; }
+#mainbar div:nth-child(6) { width: 5vw; }
+#mainbar div:nth-child(7) { width: 5vw; }
+
+#mainbar {
+        position: fixed;
+        top: 0; 
+        left: 0; 
+        width: 100vw; 
+        height: 10vh; 
+        background-color: #444;
+        box-sizing: border-box; 
+        min-width: 320px;
+        max-width: auto; 
+        display: flex;
+        align-items: center;
+}
+.leftlink {
+        display: block;
+        padding-top:5px;
+        padding: 8px;
+        color: #444;
+        font-size: 14px;
+        font-family:Courier New;
+        text-align: center;
+        text-decoration: none;
+}
+#leftbar {
+        position: fixed;
+        top:14vh;
+        left:4vw;
+        width:20vw;
+        height:90vh;
+        background-color: #ccc;
+        display: flex;
+}
+#l_left {
+        position: fixed;
+        top:10vh;
+        left:0;
+        width:4vw;
+        height:90vh;
+        background-color: #ccc;
+        display: flex;
+}
+#c_top {
+        position: fixed;
+        left:0;
+        top:10vh;
+        width:100vw;
+        background-color: #ccc;
+        height:4vh;
+        z-index: -1;   
+}
+#content {
+        position: fixed;
+        top:14vh;
+        left:23vw;
+        width:64vw;
+        height:84vh;
+        background-color: #ccc;
+        display: fixed;
+        z-index: -2;
+        overflow-y: scroll;
+}
+#rightbar {
+        position: fixed;
+        top:10vh;
+        left:80vw;
+        width:20vw;
+        height:90vh;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        z-index: -1;
+}
+#footer {
+        height: 4vh;
+        background-color: #444;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        font-size: 13px;
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+        color: white;
+}
+#footer div:nth-child(1) { width: 60%; }
+#footer div:nth-child(2) { width: 40%; }
+
+.menu-list {
+        height: 25vh;
+        overflow-y: auto;
+        width: 120px;
+}
+.burger-checkbox {
+        position: absolute;
+        visibility: hidden;
+}
+
+.burger {
+        position: fixed;
+        z-index: 10;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        border: none;
+        width: 40px;
+        height: 26px;
+        display: block;
+        cursor: pointer;
+}
+.burger::before,
+.burger::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 10px;
+        background: #000;
+}
+.burger::before {
+        top: 0;
+        box-shadow: 0 11px 0 #000;
+        transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+.burger::after {
+        bottom: 0;
+        transition: bottom .3s .15s, transform .3s;
+}
+.burger-checkbox:checked + .burger::before {
+        top: 11px;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0,0,0,0);
+        transition: box-shadow .15s, top .3s, transform .3s .15s;
+} 
+.burger-checkbox:checked + .burger::after {
+        bottom: 11px;
+        transform: rotate(-45deg);
+        transition: bottom .3s, transform .3s .15s;
+}
+.menu-list {
+        top: 0.5vh;
+        right: 0;
+        position: absolute;
+        gap: 20px;
+        padding: 40px;
+        padding-top: 30px;
+        margin-top:  58px;
+        background: #444;
+        list-style-type: none;
+        transform: translateX(100%);
+        transition: .3s;
+}
+.menu-item {
+
+        margin-top:20px;
+        display: block;
+        padding-top:10px;
+        padding: 8px;
+        color: white;
+        font-size: 14px;
+        font-family:Courier New;
+        text-align: center;
+        text-decoration: none;
+}
+
+.burger-checkbox:checked ~ .menu-list {
+        transform: translateX(0);
+}
+.menu1{text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-family:Courier New;
+}
+.menu2 {text-decoration: none;
+        color: white;
+        font-size: 15px;
+        font-family:Courier New;
+}
+.scrollable-block {
+        max-height: auto;
+        overflow: auto;
+}
